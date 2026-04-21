@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sparsh Strategic Consulting | GxP QA | Healthcare</title>
+<meta name="description" content="Sparsh Strategic Consulting — GxP quality assurance, compliance, and regulatory expertise for pharmaceutical, biotech, and medtech organisations. Singapore.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #1B2F5E;
+    --navy-dark: #0F1D3D;
+    --navy-mid: #243D70;
+    --blue: #2D2DB5;
+    --green: #3DB83D;
+    --green-light: #4FCC4F;
+    --green-dim: rgba(61,184,61,0.12);
+    --green-border: rgba(61,184,61,0.25);
+    --white: #ffffff;
+    --off-white: #F7F8FC;
+    --muted: #6B7A99;
+    --border: rgba(27,47,94,0.1);
+    --card-shadow: 0 2px 16px rgba(27,47,94,0.08);
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; font-size: 15px; color: #1a1a2e; background: var(--white); line-height: 1.6; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+    backdrop-filter: blur(8px);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-logo-icon { width: 36px; height: 36px; }
+  .nav-logo-text { display: flex; flex-direction: column; }
+  .nav-logo-text strong { color: var(--navy); font-size: 15px; font-weight: 600; letter-spacing: 0.02em; }
+  .nav-logo-text span { color: var(--muted); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a { color: var(--navy); font-size: 13px; text-decoration: none; opacity: 0.7; transition: opacity 0.2s; }
+  .nav-links a:hover { opacity: 1; }
+  .nav-links .nav-sqip { color: var(--green); opacity: 1; font-weight: 500; }
+  .nav-cta {
+    background: var(--navy); color: white;
+    font-size: 13px; font-weight: 500;
+    padding: 9px 20px; border-radius: 8px;
+    text-decoration: none; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--navy-mid); }
+
+  /* HERO */
+  .hero {
+    background: var(--navy-dark);
+    padding: 88px 40px 80px;
+    position: relative; overflow: hidden;
+  }
+  .hero-bg-circles {
+    position: absolute; right: -80px; top: -80px;
+    width: 500px; height: 500px; opacity: 0.04;
+    pointer-events: none;
+  }
+  .hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: var(--green-dim); border: 1px solid var(--green-border);
+    color: #6EE06E; font-size: 11px; padding: 5px 12px; border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .hero-badge-dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    color: white; font-size: 44px; line-height: 1.15;
+    margin-bottom: 18px; font-weight: 400;
+  }
+  .hero h1 em { color: var(--green-light); font-style: italic; }
+  .hero-sub { color: rgba(255,255,255,0.6); font-size: 15px; line-height: 1.7; margin-bottom: 32px; max-width: 440px; }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-green { background: var(--green); color: white; font-size: 14px; font-weight: 500; padding: 12px 24px; border-radius: 9px; text-decoration: none; border: none; cursor: pointer; transition: background 0.2s; display: inline-block; }
+  .btn-green:hover { background: var(--green-light); }
+  .btn-ghost { background: transparent; color: white; font-size: 14px; padding: 12px 24px; border-radius: 9px; border: 1px solid rgba(255,255,255,0.25); text-decoration: none; cursor: pointer; transition: border-color 0.2s; display: inline-block; }
+  .btn-ghost:hover { border-color: rgba(255,255,255,0.5); }
+  .hero-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 28px; }
+  .hero-tag { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.45); font-size: 11px; padding: 4px 10px; border-radius: 4px; }
+  .hero-stats { display: grid; grid-template-rows: repeat(3, 1fr); gap: 16px; }
+  .hero-stat { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 20px 22px; }
+  .hero-stat-num { color: white; font-size: 28px; font-weight: 600; margin-bottom: 3px; }
+  .hero-stat-label { color: rgba(255,255,255,0.5); font-size: 12px; }
+
+  /* TRUST BAR */
+  .trust-bar {
+    background: var(--off-white); border-bottom: 1px solid var(--border);
+    padding: 14px 40px; display: flex; align-items: center; gap: 24px; overflow-x: auto;
+  }
+  .trust-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); white-space: nowrap; flex-shrink: 0; }
+  .trust-sep { width: 1px; height: 16px; background: var(--border); flex-shrink: 0; }
+  .trust-items { display: flex; gap: 10px; flex-wrap: wrap; }
+  .trust-pill { background: white; border: 1px solid var(--border); color: var(--muted); font-size: 11px; padding: 4px 12px; border-radius: 20px; white-space: nowrap; }
+
+  /* SECTION WRAPPER */
+  .section { padding: 72px 40px; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--green); font-weight: 600; margin-bottom: 8px; }
+  .section-title { font-family: 'DM Serif Display', serif; font-size: 32px; color: var(--navy); margin-bottom: 10px; font-weight: 400; }
+  .section-sub { font-size: 14px; color: var(--muted); max-width: 540px; line-height: 1.7; margin-bottom: 36px; }
+
+  /* SERVICES */
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .service-card {
+    background: white; border: 1px solid var(--border); border-radius: 14px;
+    padding: 24px; cursor: pointer;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.15s;
+  }
+  .service-card:hover { box-shadow: var(--card-shadow); border-color: rgba(45,45,181,0.2); transform: translateY(-2px); }
+  .service-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+  .icon-navy { background: rgba(27,47,94,0.08); }
+  .icon-green { background: var(--green-dim); }
+  .icon-blue { background: rgba(45,45,181,0.08); }
+  .service-card h3 { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 6px; line-height: 1.3; }
+  .service-card p { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+  /* INDUSTRIES */
+  .industries-section { background: var(--navy-dark); }
+  .industries-section .section-title { color: white; }
+  .industries-section .section-sub { color: rgba(255,255,255,0.5); }
+  .industries-pills { display: flex; gap: 10px; flex-wrap: wrap; }
+  .industry-pill {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.75); font-size: 13px; padding: 8px 18px; border-radius: 24px;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .industry-pill:hover { background: rgba(255,255,255,0.1); color: white; }
+
+  /* WHY SPARSH */
+  .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .why-card { background: var(--off-white); border-radius: 12px; padding: 20px; }
+  .why-num { font-size: 30px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+  .why-label { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+  /* SQIP TEASER */
+  .sqip-teaser {
+    background: var(--navy); padding: 56px 40px;
+  }
+  .sqip-teaser-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .sqip-teaser-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(0,212,200,0.12); border: 1px solid rgba(0,212,200,0.25);
+    color: #00D4C8; font-size: 11px; padding: 4px 12px; border-radius: 20px; margin-bottom: 14px;
+  }
+  .sqip-teaser h2 { font-family: 'DM Serif Display', serif; color: white; font-size: 30px; font-weight: 400; margin-bottom: 12px; }
+  .sqip-teaser h2 span { color: #00D4C8; }
+  .sqip-teaser p { color: rgba(255,255,255,0.6); font-size: 13px; line-height: 1.7; margin-bottom: 20px; }
+  .sqip-patent { font-size: 11px; color: rgba(0,212,200,0.6); margin-bottom: 20px; }
+  .btn-cyan { background: #00D4C8; color: #0A0E1A; font-size: 13px; font-weight: 600; padding: 11px 22px; border-radius: 8px; text-decoration: none; display: inline-block; transition: opacity 0.2s; }
+  .btn-cyan:hover { opacity: 0.9; }
+  .sqip-modules { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .sqip-mod { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 9px; padding: 14px; }
+  .sqip-mod-live { border-color: rgba(0,212,200,0.25); background: rgba(0,212,200,0.07); }
+  .sqip-mod-tag { display: inline-block; font-size: 9px; padding: 2px 6px; border-radius: 3px; margin-bottom: 6px; font-weight: 600; }
+  .sqip-mod-live .sqip-mod-tag { background: #00D4C8; color: #0A0E1A; }
+  .sqip-mod .sqip-mod-tag { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.4); }
+  .sqip-mod-name { color: white; font-size: 12px; font-weight: 500; }
+
+  /* CONTACT */
+  .contact-section { background: var(--off-white); }
+  .contact-inner { max-width: 600px; margin: 0 auto; text-align: center; }
+  .contact-inner .section-title { text-align: center; }
+  .contact-inner .section-sub { margin: 0 auto 32px; text-align: center; }
+  .contact-form { background: white; border: 1px solid var(--border); border-radius: 16px; padding: 32px; text-align: left; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+  .form-field { margin-bottom: 14px; }
+  .form-field label { display: block; font-size: 12px; font-weight: 500; color: var(--navy); margin-bottom: 6px; }
+  .form-field input, .form-field textarea, .form-field select {
+    width: 100%; padding: 10px 14px; border: 1px solid var(--border); border-radius: 8px;
+    font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--navy);
+    background: var(--off-white); transition: border-color 0.2s; outline: none;
+  }
+  .form-field input:focus, .form-field textarea:focus, .form-field select:focus { border-color: var(--navy); background: white; }
+  .form-field textarea { height: 100px; resize: vertical; }
+  .form-submit { width: 100%; }
+
+  /* FOOTER */
+  footer { background: var(--navy-dark); padding: 40px; }
+  .footer-inner { max-width: 1100px; margin: 0 auto; }
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 32px; }
+  .footer-brand-name { color: white; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+  .footer-brand-sub { color: rgba(255,255,255,0.4); font-size: 12px; line-height: 1.6; max-width: 200px; }
+  .footer-sqip-badge { display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; background: rgba(0,212,200,0.08); border: 1px solid rgba(0,212,200,0.15); border-radius: 6px; padding: 4px 10px; }
+  .footer-sqip-badge span { color: rgba(255,255,255,0.4); font-size: 10px; }
+  .footer-sqip-badge strong { color: #00D4C8; font-size: 10px; }
+  .footer-col h5 { color: rgba(255,255,255,0.4); font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; }
+  .footer-col a { display: block; color: rgba(255,255,255,0.55); font-size: 12px; margin-bottom: 8px; text-decoration: none; transition: color 0.2s; }
+  .footer-col a:hover { color: white; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+  .footer-bottom p { color: rgba(255,255,255,0.25); font-size: 11px; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .hero { padding: 56px 20px; }
+    .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+    .hero h1 { font-size: 32px; }
+    .section { padding: 48px 20px; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .sqip-teaser-inner { grid-template-columns: 1fr; gap: 28px; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .trust-bar { padding: 14px 20px; }
+    .industries-section .section { padding: 48px 20px; }
+  }
+  @media (max-width: 600px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-inner > * { animation: fadeUp 0.6s ease both; }
+  .hero-inner > *:nth-child(2) { animation-delay: 0.15s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <svg class="nav-logo-icon" viewBox="0 0 36 36" fill="none">
+      <circle cx="18" cy="18" r="17" fill="#1B2F5E"/>
+      <circle cx="18" cy="18" r="10" fill="#3DB83D" opacity="0.7"/>
+      <circle cx="18" cy="18" r="5" fill="white" opacity="0.9"/>
+    </svg>
+    <div class="nav-logo-text">
+      <strong>SPARSH</strong>
+      <span>Strategic Consulting</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#sqip" class="nav-sqip">SQIP Platform</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="#contact" class="nav-cta">Book a Call</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <svg class="hero-bg-circles" viewBox="0 0 500 500">
+    <circle cx="250" cy="250" r="240" stroke="white" stroke-width="1" fill="none"/>
+    <circle cx="250" cy="250" r="170" stroke="white" stroke-width="1" fill="none"/>
+    <circle cx="250" cy="250" r="100" stroke="white" stroke-width="1" fill="none"/>
+    <circle cx="250" cy="250" r="40" stroke="white" stroke-width="1" fill="none"/>
+  </svg>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><div class="hero-badge-dot"></div>Singapore · GxP QA · Global Reach</div>
+      <h1>GxP Excellence.<br><em>Integrity in<br>every step.</em></h1>
+      <p class="hero-sub">Sparsh Strategic Consulting helps pharmaceutical, biotech, and medtech organisations achieve compliance, quality, and regulatory readiness — backed by 25+ years of global experience.</p>
+      <div class="hero-actions">
+        <a href="#services" class="btn-green">Explore Our Services</a>
+        <a href="#sqip" class="btn-ghost">Discover SQIP →</a>
+      </div>
+      <div class="hero-tags">
+        <span class="hero-tag">GCP · GMP · GVP · GLP</span>
+        <span class="hero-tag">FDA · EMA · MHRA · PMDA</span>
+        <span class="hero-tag">Clinical Development</span>
+        <span class="hero-tag">Singapore-based</span>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">25+</div>
+        <div class="hero-stat-label">Years of global GxP industry experience</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">1,000+</div>
+        <div class="hero-stat-label">GxP audits performed across all major domains</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">15+</div>
+        <div class="hero-stat-label">Regulatory bodies including FDA, EMA, PMDA, NMPA, MFDS, TFDA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <span class="trust-label">Sectors served</span>
+  <div class="trust-sep"></div>
+  <div class="trust-items">
+    <span class="trust-pill">Pharmaceuticals</span>
+    <span class="trust-pill">Biotechnology</span>
+    <span class="trust-pill">Medtech & Wearables</span>
+    <span class="trust-pill">Contract Research Organisations</span>
+    <span class="trust-pill">Site Management Organisations</span>
+    <span class="trust-pill">Academic Research Institutions</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services" style="background: white;">
+  <div class="section-inner">
+    <div class="section-eyebrow">What we do</div>
+    <div class="section-title">Our Services</div>
+    <p class="section-sub">End-to-end GxP QA consulting, auditing, training, and strategic advisory for life sciences organisations worldwide.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon icon-navy">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="#1B2F5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Global GxP Audits & Compliance</h3>
+        <p>Investigator site, pharmacovigilance, CSV, GDP, and for-cause audits with actionable reports and CAPA management.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon icon-blue">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="4" y="3" width="12" height="14" rx="2" stroke="#2D2DB5" stroke-width="1.5"/><path d="M7 8h6M7 11h4" stroke="#2D2DB5" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Regulatory Inspections</h3>
+        <p>Mock inspections, readiness assessments, and post-inspection response for FDA, EMA, MHRA, PMDA, NMPA, MFDS, and TFDA.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon icon-green">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="6" stroke="#3DB83D" stroke-width="1.5"/><circle cx="10" cy="10" r="2.5" fill="#3DB83D"/></svg>
+        </div>
+        <h3>GxP Consultancy Services</h3>
+        <p>GCP, GVP, GLP, GMP, CSV, GDP — QMS development, optimisation, and vendor qualification across all GxP areas.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon icon-navy">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 15l4-5 3 3 6-7" stroke="#1B2F5E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Quality & Risk Management</h3>
+        <p>Risk management across the clinical development cycle, QMS optimisation, and management of serious non-compliance cases.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon icon-green">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 6l7-3 7 3-7 3-7-3z" stroke="#3DB83D" stroke-width="1.3" fill="none"/><path d="M17 9v4M3 9v4c0 0 2.5 2.5 7 2.5s7-2.5 7-2.5" stroke="#3DB83D" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg>
+        </div>
+        <h3>Training & Education</h3>
+        <p>Customised GCP training, inspection readiness, data integrity programmes, and CAPA implementation workshops.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon icon-blue">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="10" width="4" height="7" rx="1" stroke="#2D2DB5" stroke-width="1.3"/><rect x="8" y="6" width="4" height="11" rx="1" stroke="#2D2DB5" stroke-width="1.3"/><rect x="13" y="3" width="4" height="14" rx="1" stroke="#2D2DB5" stroke-width="1.3"/></svg>
+        </div>
+        <h3>New Tech & Clinical Development</h3>
+        <p>SaMD, digital health, and wearables quality integration. End-to-end clinical development strategy with holistic patient care perspective.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="section industries-section" id="industries">
+  <div class="section-inner">
+    <div class="section-eyebrow">Who we serve</div>
+    <div class="section-title">Industries</div>
+    <p class="section-sub">Tailored solutions across the life sciences spectrum — from multinational pharma to academic research institutions.</p>
+    <div class="industries-pills">
+      <span class="industry-pill">Pharmaceuticals</span>
+      <span class="industry-pill">Biotechnology</span>
+      <span class="industry-pill">Medtech & Wearables</span>
+      <span class="industry-pill">Contract Research Organisations</span>
+      <span class="industry-pill">Site Management Organisations</span>
+      <span class="industry-pill">Academic Research Institutions</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHY SPARSH -->
+<section class="section" id="about" style="background: white;">
+  <div class="section-inner">
+    <div class="section-eyebrow">Why Sparsh</div>
+    <div class="section-title">Expertise you can trust</div>
+    <p class="section-sub">Founded on decades of real-world GxP experience — not theory. Every engagement is led by a principal with direct regulatory and audit experience.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-num">25+</div>
+        <div class="why-label">Years of global GxP industry experience</div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">1,000+</div>
+        <div class="why-label">Audits performed across all GxP domains</div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">15+</div>
+        <div class="why-label">Regulatory bodies experienced — FDA, EMA, PMDA & more</div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">Asia-Pacific</div>
+        <div class="why-label">Headquartered in Singapore with culturally adaptable global approach</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SQIP TEASER -->
+<div class="sqip-teaser" id="sqip">
+  <div class="sqip-teaser-inner">
+    <div>
+      <div class="sqip-teaser-badge">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><rect x="0.5" y="0.5" width="9" height="9" rx="2" stroke="#00D4C8" stroke-width="1"/><path d="M2.5 5l2 2L7.5 3" stroke="#00D4C8" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Introducing our platform
+      </div>
+      <h2>Meet <span>SQIP</span> — Sparsh Quality Intelligence Platform</h2>
+      <p>Built on 25 years of GxP reasoning expertise, SQIP governs the quality of reasoning behind quality decisions — not as a suggestion, as a constraint. The first platform of its kind.</p>
+      <p class="sqip-patent">Patent Filed · Singapore · April 2026 · PCT Pending</p>
+      <a href="#" class="btn-cyan">Explore SQIP →</a>
+    </div>
+    <div class="sqip-modules">
+      <div class="sqip-mod sqip-mod-live"><div class="sqip-mod-tag">Live</div><div class="sqip-mod-name">SQIP RCA</div></div>
+      <div class="sqip-mod sqip-mod-live"><div class="sqip-mod-tag">Live</div><div class="sqip-mod-name">SQIP Inspect</div></div>
+      <div class="sqip-mod sqip-mod-live"><div class="sqip-mod-tag">Live</div><div class="sqip-mod-name">SQIP CAPA</div></div>
+      <div class="sqip-mod"><div class="sqip-mod-tag">Building</div><div class="sqip-mod-name">SQIP Risk</div></div>
+      <div class="sqip-mod"><div class="sqip-mod-tag">Building</div><div class="sqip-mod-name">SQIP Oversight</div></div>
+      <div class="sqip-mod"><div class="sqip-mod-tag">Roadmap</div><div class="sqip-mod-name">SQIP Memory</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="section contact-section" id="contact">
+  <div class="section-inner">
+    <div class="contact-inner">
+      <div class="section-eyebrow">Get in touch</div>
+      <div class="section-title">Let's talk</div>
+      <p class="section-sub">Ready to elevate your GxP compliance posture? Drop us a message and a Sparsh principal will respond within 24 hours.</p>
+      <div class="contact-form">
+        <form action="mailto:info@sparsh.sg" method="POST" enctype="text/plain">
+          <div class="form-row">
+            <div class="form-field"><label>Name</label><input type="text" name="name" placeholder="Your full name"></div>
+            <div class="form-field"><label>Organisation</label><input type="text" name="org" placeholder="Company name"></div>
+          </div>
+          <div class="form-field"><label>Email *</label><input type="email" name="email" placeholder="your@organisation.com" required></div>
+          <div class="form-field">
+            <label>I am enquiring about</label>
+            <select name="service">
+              <option value="">Select a service area</option>
+              <option>GxP Audits & Compliance</option>
+              <option>Regulatory Inspections</option>
+              <option>GxP Consultancy</option>
+              <option>Quality & Risk Management</option>
+              <option>Training & Education</option>
+              <option>New Tech & Clinical Development</option>
+              <option>SQIP Platform</option>
+            </select>
+          </div>
+          <div class="form-field"><label>Message</label><textarea name="message" placeholder="Tell us about your organisation and what you need..."></textarea></div>
+          <button type="submit" class="btn-green form-submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">Sparsh Strategic Consulting</div>
+        <div class="footer-brand-sub">Touching Human Lives Through Quality and Innovation</div>
+        <div class="footer-sqip-badge">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><rect x="0.5" y="0.5" width="9" height="9" rx="2" stroke="#00D4C8" stroke-width="1" opacity="0.5"/><path d="M2.5 5l2 2L7.5 3" stroke="#00D4C8" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Creator of </span><strong>SQIP</strong>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="#services">GxP Audits</a>
+        <a href="#services">Regulatory Inspections</a>
+        <a href="#services">Consultancy</a>
+        <a href="#services">Training</a>
+      </div>
+      <div class="footer-col">
+        <h5>Platform</h5>
+        <a href="#">SQIP Overview</a>
+        <a href="#">Request Demo</a>
+        <a href="#">White Papers</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="#about">About Sparsh</a>
+        <a href="#industries">Industries</a>
+        <a href="#contact">Contact</a>
+        <a href="#">info@sparsh.sg</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Sparsh Strategic Consulting · Singapore · GxP QA · Regulatory Compliance · Life Sciences</p>
+      <p>SQIP — Patent Filed · Singapore · April 2026</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
